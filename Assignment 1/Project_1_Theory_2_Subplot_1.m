@@ -1,5 +1,5 @@
 Y = 6; Z = 4;
-XG = zeros(1,(Xend+1)/2);
+EG = zeros(1,(Xend+1)/2);
 figure(3);
 for X = 1:2:Xend
     %Calculate the E from the first plate
@@ -27,14 +27,20 @@ for X = 1:2:Xend
         end
     end
     Etotal = E1 + E2;
-    XG(1,1+(X-1)/2) = Etotal(1);
-    XG(2,1+(X-1)/2) = Etotal(2);
-    XG(3,1+(X-1)/2) = Etotal(3);
-    hold on;
-    quiver3(X,Y,Z,XG);
+    EG(1,1+(X-1)/2) = Etotal(1);
+    EG(2,1+(X-1)/2) = Etotal(2);
+    EG(3,1+(X-1)/2) = Etotal(3);
 end
 disp('The total Electric Field Tensity for the first situation is: ');
 fprintf('%.3e x + %.3e y + %.3e z (V/cm) \n',...
     Etotal(1),Etotal(2),Etotal(3));
-%clf;figure(1);view(3);
-%plot3(XG(1,:),XG(2,:),XG(3,:));
+
+clf;figure(3);view(3);
+x = 0:DS:month;
+y = Y*ones(1,(Xend+1)/2);
+y = Y*ones(size(x));
+z = Z*ones(size(x));
+u = EG(1,:);
+v = EG(2,:);
+w = EG(3,:);
+quiver3(x,y,z,u,v,w);
