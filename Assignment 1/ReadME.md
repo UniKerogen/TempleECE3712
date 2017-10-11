@@ -10,4 +10,4 @@ Project 1 MagEZSurface is the calculation for the magnitude for Electric Field o
   The result will be displayed in a 3D graph.
   
 Project 1 Subplot 1 is plotting vector of Electric Field on certain Z-axis point.
-  It still needs some working.
+  It still needs some working. Graph should be reasonable.
