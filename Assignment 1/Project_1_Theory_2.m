@@ -24,7 +24,7 @@ Plate2 = surface(X1,Y1,Z2);
 set(Plate1, 'edgecolor','green');
 set(Plate2, 'edgecolor','blue');
 %Calculate E Magnitude
-eps = 1e-11/(36*pi);S = (DS/2)^2;
+eps = 1e-11/(36*pi);S = (DS)^2;
 Y = 6; Z = 4;
 XG = zeros(1,(Xend+1));
 for X = 1:2:Xend
