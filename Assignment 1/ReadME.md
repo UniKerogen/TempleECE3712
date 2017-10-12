@@ -12,7 +12,9 @@ Project 1 MagEZSurface is the calculation for the magnitude for Electric Field o
 Project 1 Subplot 1 is plotting vector of Electric Field on certain Z-axis point.
   It still needs some working. Graph should be reasonable.
 
+
 How to get a functional code:
+
   1.Use the first part from the Theory 2 till the nasty for loop.
   2.Get the section of the input for the Theory 1 and attach it behind.
   3.Get the calcualtion branch from Branch 1 and attach it behind.
