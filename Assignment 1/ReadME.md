@@ -23,4 +23,5 @@ How to get a functional code:
 4.  Get the calculation branch from Branch 2 and attach it behind.
 5.  Uncomment the output function and change some input values for output.
 6.  Get the graphing function from Subplot 1 and attach it behind.
+
 NOTICES: It may take a while to run the funtion!
