@@ -1,0 +1,13 @@
+This is the brief explanation for the code for Compiled Theory 2 file.
+
+DS : the corresponding differential area that you need or desired.
+month: pick a month you want to.
+date: pick a date you want to.
+year: radom year.
+
+How does the code work:
+It calculate a specific point for the E and then distribute it into X, Y, Z direction using unit vector method.
+
+Miscellaneous:
+1. The quiver3 funciton is used to generate the graph for the 3D vector at certain point.
+2. X,Y,Z get overwrote for each section of calculation.
