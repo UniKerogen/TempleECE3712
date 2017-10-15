@@ -15,7 +15,7 @@ Project 1 Subplot 1 is plotting vector of Electric Field on certain Z-axis point
 Project 1 Subplot 2 is plotting vector of Electric Field on certain Z-axis point and certain X-axis point.
   It could need some work. Graph should be reasonable. Run Theory 2 first.
   
-Project 1 Compiled Theory 2 is the combination of the code mentioned above. It works.
+Project 1 Compiled Theory 2 is the combination of the code mentioned above. It works. Once change the DS to a much smaller number, it will take a while to generate the result as there are much more number for it to compile.
 
 
 
