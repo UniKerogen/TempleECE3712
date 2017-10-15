@@ -1,3 +1,5 @@
+Matlab Project on Electrostatics
+
 Project 1 Theory 1 is not working as expected due to calculation error. The user input function section can still work.
 
 Project 1 Theory 2 has the proper setup. However, the calculation is not not working.
