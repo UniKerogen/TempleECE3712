@@ -11,3 +11,4 @@ It calculate a specific point for the E and then distribute it into X, Y, Z dire
 Miscellaneous:
 1. The quiver3 funciton is used to generate the graph for the 3D vector at certain point.
 2. X,Y,Z get overwrote for each section of calculation.
+3. Graphs generally looks like what they are supposed to be. There could be some parts that need some kind of modification.
