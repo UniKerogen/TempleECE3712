@@ -1,6 +1,6 @@
 # Matlab Project on Electrostatics.
 
-## Using the discrete summation solution in MATLAB of the integral form of Coulomb’s Law with discrete charges ΔQ from the surface charge density ρ S and surface area ΔS, determine the resulting E at a point P(x,y,z)
+### Using the discrete summation solution in MATLAB of the integral form of Coulomb’s Law with discrete charges ΔQ from the surface charge density ρ S and surface area ΔS, determine the resulting E at a point P(x,y,z)
 
 ###### If there is any question, feel free to submit an issue in the **_issue tab_** with a title starting with _Project 1_.
 
