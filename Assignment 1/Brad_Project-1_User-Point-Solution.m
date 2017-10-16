@@ -52,7 +52,7 @@ xlabel('x (cm)');
 ylabel('z (cm)');
 zlabel('y (cm)');
 hold on;
-\4
+
 y_2 = linspace(Y1, Y1 + Z1 * tan(theta), 6);
 y_2 = repmat(y_2, 6, 1);
 surf(x_1, z_1, y_2);
