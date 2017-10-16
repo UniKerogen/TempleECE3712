@@ -2,6 +2,9 @@ clear all; clc; clf;%Universial Unit: cm C
 %Define
 bmonth = 6;
 bdate = 27;
+year = 1997;
+DS = 0.02; %cm
+%Comparison
 if bdate < bmonth
     Xm = bdate;
     Yd = bmonth;
@@ -9,8 +12,6 @@ else
     Yd = bdate;
     Xm = bmonth;
 end
-year = 1997;
-DS = 0.02; %cm
 %Create the matrix and corresponding value
 [X1,Y1] = meshgrid(0:(DS/2):Xm,0:(DS/2):Yd);
 E1mag = [];E2mag = [];
