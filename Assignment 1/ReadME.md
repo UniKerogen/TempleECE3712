@@ -4,6 +4,8 @@
 
 If there is any question, feel free to submit an issue in the **_issue tab_** with a title starting with _Project 1_.
 
+If you have any questions, please refer to issue tab (Open and Closed) before you submit a new issue.
+
 **Project 1 Theory 1** is not working as expected due to calculation error. The user input function section can still work.
 
 **Project 1 Theory 2** has the proper setup. However, the calculation is not not working.
