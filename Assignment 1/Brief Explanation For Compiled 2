@@ -8,6 +8,11 @@ year: radom year.
 How does the code work:
 It calculate a specific point for the E and then distribute it into X, Y, Z direction using unit vector method.
 
+It uses summation for the differentail area of DS^2 to calculate E. ΔQ will be the ρs*(DS^2). 
+R would be the distance between those two desired point. By using (x-x1)^2+(y-y1)^2+(z-z1)^2 to find the corresponding R^2.
+Unit Vector aR will be expressed as Vector/|Vector|. So in the code it would be [(x-x1)ax+(y-y1)ay+(z-z1)az]/[(x-x1)^2+(y-y1)^2+(z-z1)^2]^(1/2).
+Hence, after some simplification, you wil get each part of the calculation in the code.
+
 Miscellaneous:
 1. The quiver3 funciton is used to generate the graph for the 3D vector at certain point.
 2. X,Y,Z get overwrote for each section of calculation.
