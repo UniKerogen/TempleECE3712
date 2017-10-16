@@ -1,9 +1,16 @@
 clear all; clc; clf;%Universial Unit: cm C
 %Define
-month = 6;
-date = 27;
+bmonth = 6;
+bdate = 27;
+if bdate < bmonth
+    month = bdate;
+    date = bmonth;
+else
+    date = bdate;
+    month = bmonth;
+end
 year = 1997;
-DS = 0.2; %cm
+DS = 0.02; %cm
 %Create the matrix and corresponding value
 [X1,Y1] = meshgrid(0:(DS/2):month,0:(DS/2):date);
 E1mag = [];E2mag = [];
@@ -150,7 +157,6 @@ for a = 2:2:(Xend-1)
             ./(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
     end
 end
-%Calculate the E from the second plate
 E2 = [0,0,0];
 for c = 2:2:(Xend-1)
     for d = 2:2:(Yend-1)
