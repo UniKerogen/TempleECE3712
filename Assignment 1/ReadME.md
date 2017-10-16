@@ -27,4 +27,4 @@
 
 **Brief Explaination for Compiled 2** will give a general description for the Compiled Theory 2.
 
-
+**Brad\_Project-1\_User-Point-Solution** is a working funtion for project 1 as Compiled Theory 2. There are little differences from Compiled Theory 2 and this code. We are trying to perfect these two codes, and it will take a while.
