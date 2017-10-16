@@ -2,9 +2,9 @@
 
 ## Using the discrete summation solution in MATLAB of the integral form of Coulomb’s Law with discrete charges ΔQ from the surface charge density ρ S and surface area ΔS, determine the resulting E at a point P(x,y,z)
 
-If there is any question, feel free to submit an issue in the **_issue tab_** with a title starting with _Project 1_.
+###### If there is any question, feel free to submit an issue in the **_issue tab_** with a title starting with _Project 1_.
 
-If you have any questions, please refer to issue tab (Open and Closed) before you submit a new issue.
+###### If you have any questions, please refer to issue tab (**Open and Closed**) before you submit a new issue.
 
 **Project 1 Theory 1** is not working as expected due to calculation error. The user input function section can still work.
 
