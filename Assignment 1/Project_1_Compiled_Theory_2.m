@@ -3,19 +3,19 @@ clear all; clc; clf;%Universial Unit: cm C
 bmonth = 6;
 bdate = 27;
 if bdate < bmonth
-    month = bdate;
-    date = bmonth;
+    Xm = bdate;
+    Yd = bmonth;
 else
-    date = bdate;
-    month = bmonth;
+    Yd = bdate;
+    Xm = bmonth;
 end
 year = 1997;
 DS = 0.02; %cm
 %Create the matrix and corresponding value
-[X1,Y1] = meshgrid(0:(DS/2):month,0:(DS/2):date);
+[X1,Y1] = meshgrid(0:(DS/2):Xm,0:(DS/2):Yd);
 E1mag = [];E2mag = [];
 [Yend, Xend] = size(X1);
-Z1 = (month+date)/2;
+Z1 = (Xm+Yd)/2;
 theta = degtorad((year-1985)*2);
 %First Metal Plate
 Z21 = 0*(X1+Y1);
@@ -31,12 +31,11 @@ Plate2 = surface(X1,Y1,Z2);
 set(Plate1, 'edgecolor','green');
 set(Plate2, 'edgecolor','blue');
 title('The position of two plates');
-%%
 %Informations
 eps = 1e-11/(36*pi);S = (DS)^2;
 %%
 %First Situation
-Y = date/2; Z = Z1/2;
+Y = Yd/2; Z = Z1/2;
 EG = zeros(1,(Xend+1)/2);
 figure(3);
 for X = 1:2:Xend
@@ -70,7 +69,7 @@ for X = 1:2:Xend
     EG(3,1+(X-1)/2) = Etotal(3);
 end
 figure(2);view(3);
-x = 0:DS:month;
+x = 0:DS:Xm;
 y = Y*ones(1,(Xend+1)/2);
 y = Y*ones(size(x));
 z = Z*ones(size(x));
@@ -81,7 +80,7 @@ quiver3(x,y,z,u,v,w);
 title('Fixed Y and Z Varying X');
 %%
 %Second situation
-X = month/2; Z = Z1/2;
+X = Xm/2; Z = Z1/2;
 EG = zeros(1,(Yend+1)/2);
 figure(3);
 for Y = 1:2:Yend
@@ -115,7 +114,7 @@ for Y = 1:2:Yend
     EG(3,1+(Y-1)/2) = Etotal(3);
 end
 figure(3);view(3);
-x = 0:DS:date;
+x = 0:DS:Yd;
 y = X*ones(1,(Yend+1)/2);
 y = X*ones(size(x));
 z = Z*ones(size(x));
@@ -128,16 +127,16 @@ title('Fixed X and Z Varying Y');
 %Input for a specific point
 disp('Input value for Point P');
 fprintf('The input X value should between %.1d and %.1d\n',...
-    0.2*month,0.7*month);
+    0.2*Xm,0.7*Xm);
 fprintf('The input Y value should between %.1d and %.1d\n',...
-    0.2*date,0.7*date);
+    0.2*Yd,0.7*Yd);
 fprintf('The input Z value should between %.1d and %.1d\n',...
     0.2*Z1,0.7*Z1);
 X = input('The X-axis Value of P, in cm, = ');
 Y = input('The Y-axis Value of P, in cm, = ');
 Z = input('The Z-axis Value of P, in cm, = ');
-if(X<0.2*month || X>0.7*month || ...
-        Y<0.2*date || Y>0.7*date || ...
+if(X<0.2*Xm || X>0.7*Xm || ...
+        Y<0.2*Yd || Y>0.7*Yd || ...
         Z<0.2*Z1 || Z>0.7*Z1)
     disp('Invalid Input.');
     return
