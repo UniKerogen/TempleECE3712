@@ -52,7 +52,7 @@ xlabel('x (cm)');
 ylabel('z (cm)');
 zlabel('y (cm)');
 hold on;
-
+\4
 y_2 = linspace(Y1, Y1 + Z1 * tan(theta), 6);
 y_2 = repmat(y_2, 6, 1);
 surf(x_1, z_1, y_2);
@@ -107,7 +107,7 @@ for change = 1:2 % determines how many different DS values are calculated
             yyy = int32(y / (delta(change)/100)) - int32(yy / (delta(change)/100));
             zzz = int32(z / (delta(change)/100)) - int32(dz / (delta(change)/100));
             
-            E_2_x = E_2_x + double(sign(xxx)) * (rho_S2 * S2_d) / (4 * pi * epsilon * (double(xxx)/(10^(change+2)))^2);
+            E_2_x = E_2_x + double(sign(xxx)) * (rho_S2 * S2_d) / (4 * pi * epsilon * (double(xxx)/(10^(change+4)))^2);
             E_2_y = E_2_y + double(sign(yyy)) * (rho_S2 * S2_d) / (4 * pi * epsilon * (double(yyy)/(10^(change+4)))^2);
             E_2_z = E_2_z + double(sign(zzz)) * (rho_S2 * S2_d) / (4 * pi * epsilon * (double(zzz)/(10^(change+4)))^2);
         end
