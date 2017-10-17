@@ -2,6 +2,9 @@ clear all; clc; clf;%Universial Unit: cm C
 %Define
 bmonth = 6;
 bdate = 27;
+year = 1997;
+DS = 0.01; %cm
+%Comparison
 if bdate < bmonth
     Xm = bdate;
     Yd = bmonth;
@@ -9,8 +12,6 @@ else
     Yd = bdate;
     Xm = bmonth;
 end
-year = 1997;
-DS = 0.02; %cm
 %Create the matrix and corresponding value
 [X1,Y1] = meshgrid(0:(DS/2):Xm,0:(DS/2):Yd);
 E1mag = [];E2mag = [];
@@ -146,14 +147,16 @@ fprintf('\nThe entered values are: \n%.3d x + %.3d y + %.3d z \n\n', ...
 %%
 %Calculation for the specific point
 E1 = [0,0,0];
+ET = [0,0,0];
 for a = 2:2:(Xend-1)
     for b = 2:2:(Yend-1)
-        E1(1) = E1(1) + ((p1*S)/(4*pi*eps))*(X-X1(1,a)) ...
-            ./(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
-        E1(2) = E1(2) + (p1*S)/(4*pi*eps)*(Y-Y1(b,1)) ...
-            ./(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
-        E1(3) = E1(3) + (p1*S)/(4*pi*eps)*Z ...
-            ./(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
+        ET(1)= ((p1*S)/(4*pi*eps))*(X-X1(1,a)) ...
+            /(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
+        ET(2) = ((p1*S)/(4*pi*eps))*(Y-Y1(b,1)) ...
+            /(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
+        ET(3) = ((p1*S)/(4*pi*eps))*Z...
+            /(((X-X1(1,a))^2+(Y-Y1(b,1))^2+Z^2)^(3/2));
+        E1(1)=E1(1)+ET(1);E1(2)=E1(2)+ET(2);E1(3)=E1(3)+ET(3);
     end
 end
 E2 = [0,0,0];
@@ -167,7 +170,7 @@ for c = 2:2:(Xend-1)
             ./(((X-X1(1,c))^2+(Y-Y1(d,1))^2+(Z-Z2(d,1))^2)^(3/2));
     end
 end
-Etotal = E1 + E2;
+Etotal = E1;
 disp('The total Electric Field Tensity is: ');
 fprintf('%.3e x + %.3e y + %.3e z (V/cm) \n',...
     Etotal(1),Etotal(2),Etotal(3));
