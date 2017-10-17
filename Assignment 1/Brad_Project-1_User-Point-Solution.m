@@ -70,13 +70,9 @@ delta = [0.1, 0.01, 0.001];
 
 % evaluate with different DS lengths
 for change = 1:2 % determines how many different DS values are calculated
-    deltax = (0:(X1/delta(change)))*delta(change) + delta(change)/2; % midpoints
-    deltaz = (0:(Z1/delta(change)))*delta(change) + delta(change)/2; % ^^^
-    deltal = (0:((Z1 * sqrt(1 + tan(theta)^2))/delta(change)))*delta(change) + delta(change)/2;
-    
-    deltax = deltax(1:end-1); % remove out-of-bounds values
-    deltaz = deltaz(1:end-1); % ^^^
-    deltal = deltal(1:end-1); % ^^^
+    deltax = delta(change)/2 : delta(change) : X1; % midpoints
+    deltaz = delta(change)/2 : delta(change) : Z1; % ^^^
+    deltal = delta(change)/2 : delta(change) : (Z1 * sqrt(1 + tan(theta)^2));
     
     S1_d = S1 / (length(deltax) * length(deltaz)); % calculate surface area, = DS^2
     S2_d = S2 / (length(deltax) * length(deltal)); % ^^^
