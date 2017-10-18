@@ -19,11 +19,11 @@ Hence, after some simplification, you wil get each part of the calculation in th
 ##### Each Section Explaination:
 1. The first seciton is for general graph generation and also initializing some critical values for this project. 
   It will generate a 3D graph for the two plate. It will also determine whether you bmonth is bigger than bdate or not.
-  ![Alt text](https://user-images.githubusercontent.com/28737574/31737326-19d59852-b415-11e7-86af-2bc1e9b52bf0.png)
+  ![Alt text](https://user-images.githubusercontent.com/28737574/31746829-5e6dd21e-b437-11e7-88e4-55c86e3ed756.png)
 2. The second section is the numerical value for several critical numbers.
-   ![Alt text](https://user-images.githubusercontent.com/28737574/31737324-19b80634-b415-11e7-8a1a-65c385dc1032.png)
+   ![Alt text](https://user-images.githubusercontent.com/28737574/31746797-3029af9a-b437-11e7-90f3-9e67ad6a16e8.png)
 3. The thrid section is about calculation for the first situation. (Refer to the project PDF file). It will generate a 3D graph for the vector.
-    ![Alt text](https://user-images.githubusercontent.com/28737574/31737325-19c53124-b415-11e7-9c69-b37d23c7bd73.png)
+    ![Alt text](https://user-images.githubusercontent.com/28737574/31746799-3081f1a0-b437-11e7-8da4-b3bcf029211b.png)
 4. The fourth section is about calcualtion for the second situation. It will generate a 3D graph for the vector.
 5. The fifith section is for user input, it will give out the value for the vector E in x,y,z direction.
 
