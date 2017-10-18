@@ -1,9 +1,10 @@
+%Start of the Code
 clear all; clc; clf;%Universial Unit: cm C
 %Define
 bmonth = 6;
 bdate = 27;
 year = 1997;
-DS = 0.01; %cm
+DS = 0.1; %cm
 %Comparison
 if bdate < bmonth
     Xm = bdate;
@@ -31,14 +32,14 @@ hold on;
 Plate2 = surface(X1,Y1,Z2);
 set(Plate1, 'edgecolor','green');
 set(Plate2, 'edgecolor','blue');
-title('The position of two plates');
+title('The Position of Two Plates');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %Informations
 eps = 1e-11/(36*pi);S = (DS)^2;
 %%
 %First Situation
 Y = Yd/2; Z = Z1/2;
 EG = zeros(1,(Xend+1)/2);
-figure(3);
 for X = 1:2:Xend
     %Calculate the E from the first plate
     E1 = [0,0,0];
@@ -78,12 +79,12 @@ u = EG(1,:);
 v = EG(2,:);
 w = EG(3,:);
 quiver3(x,y,z,u,v,w);
-title('Fixed Y and Z Varying X');
+title('Electrical Field Vector on a Fixed Y and Z Varying X');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %%
 %Second situation
 X = Xm/2; Z = Z1/2;
 EG = zeros(1,(Yend+1)/2);
-figure(3);
 for Y = 1:2:Yend
     %Calculate the E from the first plate
     E1 = [0,0,0];
@@ -123,7 +124,8 @@ u = EG(1,:);
 v = EG(2,:);
 w = EG(3,:);
 quiver3(x,y,z,u,v,w);
-title('Fixed X and Z Varying Y');
+title('Electrical Field Vector on a Fixed X and Z Varying Y');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %%
 %Input for a specific point
 disp('Input value for Point P');
@@ -170,7 +172,8 @@ for c = 2:2:(Xend-1)
             ./(((X-X1(1,c))^2+(Y-Y1(d,1))^2+(Z-Z2(d,1))^2)^(3/2));
     end
 end
-Etotal = E1;
+Etotal = E1+E2;
 disp('The total Electric Field Tensity is: ');
 fprintf('%.3e x + %.3e y + %.3e z (V/cm) \n',...
     Etotal(1),Etotal(2),Etotal(3));
+%End of the Code
