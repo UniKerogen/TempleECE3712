@@ -1,14 +1,17 @@
+%Start of the Code
 clear all; clc; clf;%Universial Unit: cm C
 %Define
 bmonth = 6;
 bdate = 27;
 year = 1997;
-DS = 0.01; %cm
+DS = 0.1; %cm
 %Comparison
 if bdate < bmonth
-    Xm = bdate; Yd = bmonth;
+    Xm = bdate;
+    Yd = bmonth;
 else
-    Yd = bdate; Xm = bmonth;
+    Yd = bdate;
+    Xm = bmonth;
 end
 %Create the matrix and corresponding value
 [X1,Y1] = meshgrid(0:(DS/2):Xm,0:(DS/2):Yd);
@@ -17,16 +20,20 @@ E1mag = [];E2mag = [];
 Z1 = (Xm+Yd)/2;
 theta = degtorad((year-1985)*2);
 %First Metal Plate
-Z21 = 0*(X1+Y1); p1 = 0.1; % C/cm2
+Z21 = 0*(X1+Y1);
+p1 = 0.1; % C/cm2
 %Second Metal Plate
-Z2 = Z1 + Y1*tan(theta); p2 = 0.4; % C/cm2
+Z2 = Z1 + Y1*tan(theta);
+p2 = 0.4; % C/cm2
 %Plot two plate in Coordinate System
 figure(1);view(3);
-Plate1 = surface(X1,Y1,Z21); hold on;
+Plate1 = surface(X1,Y1,Z21);
+hold on;
 Plate2 = surface(X1,Y1,Z2);
 set(Plate1, 'edgecolor','green');
 set(Plate2, 'edgecolor','blue');
-title('The position of two plates');
+title('The Position of Two Plates');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %Informations
 eps = 1e-11/(36*pi);S = (DS)^2;
 %%
@@ -68,9 +75,12 @@ x = 0:DS:Xm;
 y = Y*ones(1,(Xend+1)/2);
 y = Y*ones(size(x));
 z = Z*ones(size(x));
-u = EG(1,:); v = EG(2,:); w = EG(3,:);
+u = EG(1,:);
+v = EG(2,:);
+w = EG(3,:);
 quiver3(x,y,z,u,v,w);
-title('Fixed Y and Z Varying X');
+title('Electrical Field Vector on a Fixed Y and Z Varying X');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %%
 %Second situation
 X = Xm/2; Z = Z1/2;
@@ -110,9 +120,12 @@ x = 0:DS:Yd;
 y = X*ones(1,(Yend+1)/2);
 y = X*ones(size(x));
 z = Z*ones(size(x));
-u = EG(1,:); v = EG(2,:); w = EG(3,:);
+u = EG(1,:);
+v = EG(2,:);
+w = EG(3,:);
 quiver3(x,y,z,u,v,w);
-title('Fixed X and Z Varying Y');
+title('Electrical Field Vector on a Fixed X and Z Varying Y');
+xlabel('X Axis');ylabel('Y Axis');zlabel('Z Axis');
 %%
 %Input for a specific point
 disp('Input value for Point P');
@@ -135,7 +148,8 @@ fprintf('\nThe entered values are: \n%.3d x + %.3d y + %.3d z \n\n', ...
     X,Y,Z);
 %%
 %Calculation for the specific point
-E1 = [0,0,0];ET = [0,0,0];
+E1 = [0,0,0];
+ET = [0,0,0];
 for a = 2:2:(Xend-1)
     for b = 2:2:(Yend-1)
         ET(1)= ((p1*S)/(4*pi*eps))*(X-X1(1,a)) ...
@@ -162,3 +176,4 @@ Etotal = E1+E2;
 disp('The total Electric Field Tensity is: ');
 fprintf('%.3e x + %.3e y + %.3e z (V/cm) \n',...
     Etotal(1),Etotal(2),Etotal(3));
+%End of the Code
